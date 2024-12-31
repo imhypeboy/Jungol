@@ -7,6 +7,25 @@ public class 시험점수{
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        /*
+         * switch (score / 10) {
+    case 10: 
+    case 9: 
+        System.out.println("A");
+        break;
+    case 8:
+        System.out.println("B");
+        break;
+    case 7:
+        System.out.println("C");
+        break;	
+    case 6:
+        System.out.println("D");
+        break;
+    default:
+        System.out.println("F");
+}
+         */
 
         // 시험 점수 입력받기
         System.out.print("시험 점수를 입력하세요 (0 ~ 100): ");
