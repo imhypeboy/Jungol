@@ -19,6 +19,6 @@ public class test613{
         System.out.println("School : " + school);
         System.out.println("Grade : " + grade);
 
-        scanner.close(); // 스캐너 닫기
+        scanner.close();
     }
 }
