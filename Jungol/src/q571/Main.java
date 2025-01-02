@@ -23,3 +23,31 @@ public class Main {
         scanner.close();
     }
 }
+/*
+ * import java.util.Scanner;
+ * 
+ * public class Main {
+ * public static void main(String[]args){
+ * Scanner sc = new Scanner(System.in);
+ * int inp = sc.nextInt();
+ * sc.close();
+ * 
+ * System.out.println(inp);
+ * }
+ * }
+  
+  */
+
+/* 1 instance method
+ *Main m1 = new Main();
+ *for(int i=0; i< inp; i++){
+ *
+ *m1.printLine();
+ *}}
+ *
+ */
+//2. static method
+//printLine2();
+//Main.printLine2();
+
+
