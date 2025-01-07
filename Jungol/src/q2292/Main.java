@@ -15,12 +15,11 @@ public class Main {
             return;
         }
 
-        long layer = 1; // 현재 층
-        long range = 1; // 현재 층의 마지막 방 번호
+        long layer = 1; 
+        long range = 1;
 
-        // N이 포함될 층을 찾는다
         while (range < N) {
-            range += 6 * layer; // 각 층마다 6 * layer 방이 추가됨
+            range += 6 * layer; 
             layer++;
         }
 
