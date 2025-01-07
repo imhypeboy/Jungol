@@ -9,7 +9,6 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         long N = Long.parseLong(br.readLine()); // 입력값 N
 
-        // 중앙(1번째 방)일 경우
         if (N == 1) {
             System.out.println(1);
             return;
