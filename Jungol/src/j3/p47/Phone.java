@@ -1,6 +1,7 @@
 package j3.p47;
 public abstract class Phone{
 	public String ownerString;
+	private String owner;
 	
 	public Phone(String owner) { 
 		this.owner = owner;
