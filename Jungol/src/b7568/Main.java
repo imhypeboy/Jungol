@@ -1,3 +1,5 @@
+package b7568;
+
 import java.util.*;
 
 public class Main {
