@@ -22,7 +22,7 @@ public class PanelTest {
 
    public void startFrame() {
        f.add(tf1, BorderLayout.NORTH);
-       p.setBackground(Color.green);
+       p.setBackground(Color.pink);
        p.add(ok);
        p.add(cancel);
        f.add(p, BorderLayout.CENTER);
