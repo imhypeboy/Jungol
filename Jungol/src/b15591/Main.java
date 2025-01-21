@@ -1,12 +1,77 @@
 package b15591;
 
+import java.util.*;
+
 public class Main {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+    static class Node {
+        int video;
+        int usado;
 
-	}
+        Node(int video, int usado) {
+            this.video = video;
+            this.usado = usado;
+        }
+    }
 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int N = sc.nextInt(); // 동영상 개수
+        int Q = sc.nextInt(); // 질문 개수
+
+        List<List<Node>> graph = new ArrayList<>();
+        for (int i = 0; i <= N; i++) {
+            graph.add(new ArrayList<>());
+        }
+
+        // 그래프 입력
+        for (int i = 0; i < N - 1; i++) {
+            int p = sc.nextInt();
+            int q = sc.nextInt();
+            int r = sc.nextInt();
+
+            graph.get(p).add(new Node(q, r));
+            graph.get(q).add(new Node(p, r));
+        }
+
+        // 질문 처리
+        for (int i = 0; i < Q; i++) {
+            int k = sc.nextInt(); // 최소 USADO 값
+            int v = sc.nextInt(); // 시작 동영상
+
+            System.out.println(bfs(graph, N, k, v));
+        }
+
+        sc.close();
+    }
+
+    static int bfs(List<List<Node>> graph, int N, int k, int start) {
+        boolean[] visited = new boolean[N + 1];
+        Queue<Node> queue = new LinkedList<>();
+        visited[start] = true;
+        queue.add(new Node(start, Integer.MAX_VALUE)); // 초기 최소값은 매우 크게 설정
+
+        int count = 0;
+
+        while (!queue.isEmpty()) {
+            Node current = queue.poll();
+
+            for (Node neighbor : graph.get(current.video)) {
+                if (!visited[neighbor.video]) {
+                    visited[neighbor.video] = true;
+                    int minUsado = Math.min(current.usado, neighbor.usado);
+
+                    if (minUsado >= k) {
+                        count++;
+                        queue.add(new Node(neighbor.video, minUsado));
+                    }
+                }
+            }
+        }
+
+        return count;
+    }
 }
 
 /*
