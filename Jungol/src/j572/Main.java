@@ -17,4 +17,9 @@ public class Main {
 
         in.close(); // Scanner 닫기
     }
+
+	public double getArea(int r) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
